@@ -263,16 +263,30 @@ const animationTimeline = () => {
         rotation: 90,
       },
       "+=1"
-    );
+  ).staggerFrom(".nine p", 1, ideaTextTrans, 1.2)
+  .to(
+    ".last-smile",
+    0.5,
+    {
+      rotation: 90,
+    },
+    "+=1"
+  )
+  .to(".next-btn", 0.8, {
+    opacity: 1,
+    y: 0,
+    ease: Power2.easeOut,
+  }, "+=1.5"); 
+    ;
 
   // tl.seek("currentStep");
   // tl.timeScale(2);
 
   // Restart Animation on click
-  const replyBtn = document.getElementById("replay");
-  replyBtn.addEventListener("click", () => {
-    tl.restart();
-  });
+  // const replyBtn = document.getElementById("replay");
+  // replyBtn.addEventListener("click", () => {
+  //   tl.restart();
+  // });
 };
 
 // Import the data to customize and insert them into page
